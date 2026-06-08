@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis XV Años</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#f8d7e8,#fff);
+    color:#333;
+    text-align:center;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:5rem;
+    color:#d4af37;
+    margin:0;
+}
+
+.subtitle{
+    font-size:1.2rem;
+    margin:20px 0;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    max-width:500px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#d4af37;
+    color:white;
+    text-decoration:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+.countdown{
+    margin-top:20px;
+    font-size:1.5rem;
+    color:#d4af37;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<h1>Valentina</h1>
+
+<div class="card">
+
+<p>Con gran alegría te invito a celebrar mis XV años.</p>
+
+<p><strong>Fecha:</strong> 15 de Agosto de 2026</p>
+<p><strong>Hora:</strong> 7:00 PM</p>
+<p><strong>Lugar:</strong> Salón de Eventos Elegance</p>
+
+<div class="countdown" id="contador"></div>
+
+<a class="btn" href="https://wa.me/573001234567">
+Confirmar Asistencia
+</a>
+
+</div>
+
+</section>
+
+<script>
+
+const fechaEvento = new Date("August 15, 2026 19:00:00").getTime();
+
+setInterval(() => {
+
+const ahora = new Date().getTime();
+const distancia = fechaEvento - ahora;
+
+const dias = Math.floor(distancia / (1000*60*60*24));
+const horas = Math.floor((distancia % (1000*60*60*24))/(1000*60*60));
+const minutos = Math.floor((distancia % (1000*60*60))/(1000*60));
+
+document.getElementById("contador").innerHTML =
+`✨ Faltan ${dias} días, ${horas} horas y ${minutos} minutos ✨`;
+
+},1000);
+
+</script>
+
+</body>
+</html>
